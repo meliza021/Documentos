@@ -1,0 +1,16 @@
+.box{
+    width: 100px;
+    height: 100px;
+    background: teal;
+    position: relative;
+    margin-top: 2rem;
+}
+.controles{
+    margin-top: 5rem;
+
+}
+button{
+    margin: 5px;
+    border: none;
+    background: transparent;
+}
