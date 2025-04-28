@@ -3,9 +3,9 @@ const late = document.getElementById('crear-bounce');
 
 
 const _pause = document.getElementById('pausar');
+const _play = document.getElementById('reanudar');
+const _reset = document.getElementById('reiniciar');
 const _delete = document.getElementById('eliminar');
-const _estado = document.getElementById('estado'); 
-const _tiempo = document.getElementById('tiempo'); 
 
 let caja = null
 let animacion = null;
