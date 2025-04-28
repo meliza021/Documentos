@@ -1,25 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script type="module" src="main.js" defer></script>
+    <title>Campus News</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+    </style>
 </head>
 <body>
-    <h1>Control de Animacion</h1>
-    <button id="crear">Animar Caja</button>
-    <button id="crear-bounce">animar Caja</button>
-    <button id="crear-zoom" >ZoomOUtDown </button>
-    <div id="Zona-caja">
-        <div class="controles">
-            <button id="pausar">⏸️</button>
-            <button id="reanudar">▶️</button>
-            <button id="reiniciar">🔁</button>
-            <button id="eliminar">⏏️</button>
-        </div>
-
-    </div>
+    <campus-news-app></campus-news-app>
+    
+    <script src="components/campus-news-app.js"></script>
+    <script src="components/campus-category-filters.js"></script>
+    <script src="components/campus-news-list.js"></script>
+    <script src="components/campus-news-item.js"></script>
+    <script src="components/campus-news-detail.js"></script>
+    <script src="components/campus-debug-panel.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
