@@ -1,0 +1,76 @@
+{
+  "campusArticles": [
+    {
+      "id": 1,
+      "title": "Jornada de puertas abiertas en Ingeniería",
+      "summary": "Visitas guiadas y charlas con profesores y estudiantes.",
+      "content": "<p>Este sábado 3 de mayo, la Facultad de Ingeniería abrirá sus puertas al público general y a futuros estudiantes. Durante el evento podrás conocer los laboratorios, hacer preguntas directamente a profesores y estudiantes actuales, además de participar en demostraciones prácticas de proyectos innovadores.</p><p>El programa incluye visitas guiadas cada 30 minutos, charlas informativas sobre los distintos programas académicos y una feria de proyectos donde los estudiantes mostrarán sus últimos trabajos. Te esperamos de 10:00 a 16:00 horas en el edificio central del campus.</p>",
+      "author": "Oficina de Admisiones",
+      "date": "28 de abril, 2025",
+      "category": "Eventos"
+    },
+    {
+      "id": 2,
+      "title": "Proyecto de robótica gana concurso nacional",
+      "summary": "El equipo RoboCanino de Informática obtuvo el primer lugar.",
+      "content": "<p>Tras meses de trabajo intenso, el equipo RoboCanino de la Facultad de Informática se coronó campeón en el Concurso Nacional de Robótica celebrado en Madrid la semana pasada. Su proyecto de asistente robótico para personas con discapacidad visual impresionó al jurado por su innovación y aplicación práctica.</p><p>\"Nuestro objetivo era crear algo que realmente pudiera marcar una diferencia en la vida cotidiana\", explicó María Sánchez, líder del equipo. El prototipo utiliza sensores avanzados y algoritmos de inteligencia artificial para guiar a personas con discapacidad visual en entornos desconocidos.</p><p>El premio incluye una beca de investigación de 15.000€ para continuar desarrollando el proyecto.</p>",
+      "author": "Facultad de Ingeniería",
+      "date": "25 de abril, 2025",
+      "category": "Investigación"
+    },
+    {
+      "id": 3,
+      "title": "Equipo de baloncesto femenino a la final",
+      "summary": "Las 'Panteras' derrotaron a la Universidad del Norte por 78-65.",
+      "content": "<p>El equipo femenino de baloncesto de nuestra universidad, conocido como 'Las Panteras', se clasificó ayer para la final del Campeonato Interuniversitario tras derrotar a la Universidad del Norte por 78-65 en un partido emocionante celebrado en nuestro pabellón deportivo.</p><p>Ana Martín fue la máxima anotadora del partido con 23 puntos, mientras que Laura Gómez dirigió magistralmente el juego desde el base. \"Ha sido un partido muy duro, pero todas hemos dado el máximo y estamos muy felices de poder jugar la final\", comentó la capitana del equipo, Carla Vega.</p><p>La final se disputará el próximo sábado contra la Universidad Central, en el Pabellón Olímpico. La entrada será gratuita para estudiantes con carnet universitario. ¡Ven a animar a nuestras chicas!</p>",
+      "author": "Departamento de Deportes",
+      "date": "22 de abril, 2025",
+      "category": "Deportes"
+    },
+    {
+      "id": 4,
+      "title": "Abierto el plazo para becas de verano",
+      "summary": "Prácticas remuneradas en empresas tecnológicas de primer nivel.",
+      "content": "<p>La Oficina de Prácticas y Empleo ha abierto el plazo para solicitar las becas de verano en empresas tecnológicas. Este año contamos con la colaboración de más de 20 empresas del sector tecnológico, incluyendo líderes como TechGlobal, InnovaSoft y MicroSystem.</p><p>Las prácticas están dirigidas a estudiantes de tercer y cuarto curso de cualquier ingeniería o ciencias de la computación, y tienen una duración de dos meses (julio y agosto) con una remuneración mensual de 800€.</p><p>Para solicitar una de estas becas, los interesados deben presentar su currículum, expediente académico y una carta de motivación antes del 15 de mayo a través de la plataforma online de la universidad.</p>",
+      "author": "Oficina de Prácticas y Empleo",
+      "date": "20 de abril, 2025",
+      "category": "Becas"
+    },
+    {
+      "id": 5,
+      "title": "Festival cultural celebra la diversidad del campus",
+      "summary": "Música, gastronomía y tradiciones de más de 25 países.",
+      "content": "<p>El tradicional Festival Cultural de nuestra universidad celebrará su decimoquinta edición el próximo fin de semana con la participación de estudiantes de más de 25 nacionalidades diferentes. El evento, que tendrá lugar en la Plaza Central del campus, ofrecerá una muestra de música, gastronomía y tradiciones de países de todos los continentes.</p><p>\"Es una oportunidad única para conocer culturas de todo el mundo sin salir del campus\", explica Jorge Méndez, coordinador del Departamento de Actividades Culturales. \"Los puestos gastronómicos son siempre un éxito, pero también tendremos talleres de danzas tradicionales, exhibiciones de artesanía y un escenario con actuaciones continuas durante todo el día\".</p><p>El festival se celebrará el sábado 5 de mayo de 11:00 a 22:00 horas, con entrada libre para toda la comunidad universitaria y público general.</p>",
+      "author": "Departamento de Actividades Culturales",
+      "date": "18 de abril, 2025",
+      "category": "Vida estudiantil"
+    },
+    {
+      "id": 6,
+      "title": "Nueva biblioteca digital amplía recursos de investigación",
+      "summary": "Acceso a más de 50.000 publicaciones científicas adicionales.",
+      "content": "<p>La biblioteca universitaria ha ampliado su catálogo digital con la incorporación de tres nuevas bases de datos que proporcionan acceso a más de 50.000 publicaciones científicas adicionales. Esta expansión beneficiará especialmente a los investigadores y estudiantes de posgrado en las áreas de ciencias biomédicas, tecnología y humanidades digitales.</p><p>\"Esta inversión responde a la creciente demanda de acceso a material de investigación actualizado\", explica la directora de la biblioteca, Elena Rivas. \"Ahora nuestros usuarios pueden acceder a revistas de alto impacto como Nature Digital Medicine, Advanced Computing Reviews y Digital Humanities Journal\".</p><p>Para facilitar el uso de estos nuevos recursos, la biblioteca ofrecerá talleres de formación durante las próximas dos semanas. Los interesados pueden inscribirse a través del portal de la biblioteca.</p>",
+      "author": "Biblioteca Universitaria",
+      "date": "15 de abril, 2025",
+      "category": "Investigación"
+    },
+    {
+      "id": 7,
+      "title": "Conferencia internacional sobre cambio climático",
+      "summary": "Expertos de 12 países debatirán sobre soluciones sostenibles.",
+      "content": "<p>El Departamento de Ciencias Ambientales organiza la III Conferencia Internacional sobre Cambio Climático y Desarrollo Sostenible, que reunirá a expertos de 12 países para debatir sobre los últimos avances científicos y propuestas de solución a la crisis climática.</p><p>Entre los ponentes destacados se encuentran la Dra. Sarah Johnson de la Universidad de California, pionera en investigación sobre captura de carbono, y el Prof. Hiroshi Tanaka de la Universidad de Tokio, especialista en energías renovables.</p><p>\"Es un privilegio poder reunir a tantos expertos de primer nivel en nuestro campus\", afirma el Dr. Alberto Sánchez, organizador del evento. \"El objetivo es no solo compartir conocimiento científico, sino también establecer colaboraciones internacionales para proyectos futuros\".</p><p>La conferencia se celebrará del 10 al 12 de mayo en el Auditorio Principal. La entrada es gratuita para miembros de la comunidad universitaria previa inscripción.</p>",
+      "author": "Departamento de Ciencias Ambientales",
+      "date": "12 de abril, 2025",
+      "category": "Eventos"
+    },
+    {
+      "id": 8,
+      "title": "Club de debate gana campeonato interuniversitario",
+      "summary": "Primera victoria en la historia de nuestra universidad.",
+      "content": "<p>El Club de Debate de nuestra universidad se proclamó campeón del Torneo Interuniversitario Nacional celebrado el pasado fin de semana en Valencia. Es la primera vez en sus 15 años de historia que nuestro equipo consigue este prestigioso título.</p><p>El equipo, formado por estudiantes de Derecho, Filosofía y Ciencias Políticas, superó en la final a la Universidad Complutense de Madrid defendiendo la postura a favor sobre el tema \"¿Debería implementarse una renta básica universal?\".</p><p>\"La clave de nuestro éxito ha sido la preparación exhaustiva y la diversidad de perspectivas dentro del equipo\", explica Luis Torres, capitán del equipo. \"Pasamos más de 100 horas investigando y preparando argumentos para ambas posturas del debate\".</p><p>Carlos Ruiz, estudiante de segundo año de Filosofía, fue reconocido como el mejor orador del torneo.</p>",
+      "author": "Club de Debate",
+      "date": "10 de abril, 2025",
+      "category": "Vida estudiantil"
+    }
+  ]
+}

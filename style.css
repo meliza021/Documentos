@@ -1,16 +1,79 @@
-.box{
-    width: 100px;
-    height: 100px;
-    background: teal;
-    position: relative;
-    margin-top: 2rem;
+/* Estilos globales con tonalidades rosa */
+:root {
+    --primary-color: #e83e8c; /* Rosa principal */
+    --primary-dark: #c71f66; /* Rosa oscuro */
+    --primary-light: #f8bbda; /* Rosa claro */
+    --accent-color: #f06292; /* Rosa acento */
+    --bg-color: #fff0f5; /* Lavanda muy pálido */
+    --text-color: #4a4a4a;
+    --text-light: #777777;
+    --border-color: #ffc0cb; /* Rosa pálido */
+    --shadow-color: rgba(232, 62, 140, 0.15);
+    --hover-color: #ffd6e7; /* Rosa muy claro para hover */
+    --active-color: #ffb6c1; /* Rosa claro para elementos activos */
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.controles{
-    margin-top: 5rem;
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-button{
-    margin: 5px;
-    border: none;
-    background: transparent;
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo img {
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px;
+    width: 10%;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.content-container {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    background-color: var(--primary-dark);
+    color: white;
 }

@@ -3,25 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Campus News</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-    </style>
+    <title>Campus News - Portal de Noticias Universitarias</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" type="module"></script>
 </head>
 <body>
-    <campus-news-app></campus-news-app>
+    <header>
+        <div class="logo">
+            <img src="./123.jpg" alt="Logo Campus News">
+            <h1>Campus News</h1>
+        </div>
+    </header>
     
-    <script src="components/campus-news-app.js"></script>
-    <script src="components/campus-category-filters.js"></script>
-    <script src="components/campus-news-list.js"></script>
-    <script src="components/campus-news-item.js"></script>
-    <script src="components/campus-news-detail.js"></script>
-    <script src="components/campus-debug-panel.js"></script>
-    <script src="main.js"></script>
+    <main>
+        <campus-news-app>
+            <campus-category-filters></campus-category-filters>
+            <div class="content-container">
+                <campus-news-list></campus-news-list>
+                <campus-news-detail></campus-news-detail>
+            </div>
+            <campus-debug-panel></campus-debug-panel>
+        </campus-news-app>
+    </main>
+    
+    <footer>
+        <p>© 2025 Campus News - Todos los derechos reservados</p>
+    </footer>
 </body>
 </html>

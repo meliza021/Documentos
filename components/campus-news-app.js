@@ -1,147 +1,137 @@
-// components/campus-news-app.js
+// Componente principal que orquesta toda la aplicación
 class CampusNewsApp extends HTMLElement {
-    constructor() {
-      super();
-      this._articles = [];
-      this._currentCategory = 'Todas';
-      this._currentArticleId = null;
-      
-      const shadow = this.attachShadow({ mode: 'open' });
-      shadow.innerHTML = `
-        <style>
-          :host {
-            display: block;
-            max-width: 1200px;
-            margin: 0 auto;
-            font-family: Arial, sans-serif;
+  constructor() {
+    super();
+    const shadow = this.attachShadow({ mode: 'open' });
+    
+    // Estado global de la aplicación
+    this.state = {
+      articles: [],
+      currentCategory: 'Todas',
+      currentArticleId: null,
+      filteredArticles: []
+    };
+
+    shadow.innerHTML = `
+      <style>
+        :host {
+          display: block;
+          font-family: var(--font-primary, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
+        }
+        
+        .app-container {
+          background-color: white;
+          border-radius: 8px;
+          box-shadow: 0 4px 10px rgba(232, 62, 140, 0.2);
+          overflow: hidden;
+          margin-bottom: 2rem;
+        }
+        
+        ::slotted(.content-container) {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+          ::slotted(.content-container) {
+            flex-direction: column;
           }
-          .app-container {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            grid-template-rows: auto 1fr;
-            gap: 20px;
-          }
-          .header {
-            grid-column: 1 / 3;
-            padding: 10px 0;
-            text-align: center;
-            background-color: #264653;
-            color: white;
-            border-radius: 5px;
-          }
-          .left-panel {
-            grid-column: 1 / 2;
-          }
-          .right-panel {
-            grid-column: 2 / 3;
-          }
-          @media (max-width: 768px) {
-            .app-container {
-              grid-template-columns: 1fr;
-            }
-            .header {
-              grid-column: 1;
-            }
-            .left-panel, .right-panel {
-              grid-column: 1;
-            }
-          }
-        </style>
-        <div class="app-container">
-          <div class="header">
-            <h1>Campus News</h1>
-          </div>
-          <div class="left-panel">
-            <campus-category-filters></campus-category-filters>
-            <campus-news-list></campus-news-list>
-          </div>
-          <div class="right-panel">
-            <campus-news-detail></campus-news-detail>
-            <campus-debug-panel></campus-debug-panel>
-          </div>
-        </div>
-      `;
+        }
+      </style>
       
-      this.addEventListener('campus:category-change', this.handleCategoryChange);
-      this.addEventListener('campus:article-select', this.handleArticleSelect);
-    }
+      <div class="app-container">
+        <slot></slot>
+      </div>
+    `;
     
-    set articles(value) {
-      this._articles = value;
-      this.updateFilteredArticles();
-      this.dispatchDebugUpdate();
-    }
-    
-    get articles() {
-      return this._articles;
-    }
-    
-    connectedCallback() {
-      setTimeout(() => {
-        this.updateFilteredArticles();
-      }, 0);
-    }
-    
-    handleCategoryChange = (event) => {
-      this._currentCategory = event.detail.category;
-      this.updateFilteredArticles();
-      this.dispatchDebugUpdate();
-    }
-    
-    handleArticleSelect = (event) => {
-      this._currentArticleId = event.detail.id;
-      
-      // Actualizar el detalle del artículo
-      const detailComponent = this.shadowRoot.querySelector('campus-news-detail');
-      const selectedArticle = this._articles.find(article => article.id === this._currentArticleId);
-      if (detailComponent && selectedArticle) {
-        detailComponent.article = selectedArticle;
-      }
-      
-      // Actualizar lista para resaltar el seleccionado
-      const listComponent = this.shadowRoot.querySelector('campus-news-list');
-      if (listComponent) {
-        listComponent.selectedId = this._currentArticleId;
-      }
-      
-      this.dispatchDebugUpdate();
-    }
-    
-    updateFilteredArticles() {
-      const filteredArticles = this._currentCategory === 'Todas' 
-        ? this._articles 
-        : this._articles.filter(article => article.category === this._currentCategory);
-      
-      const filtersComponent = this.shadowRoot.querySelector('campus-category-filters');
-      if (filtersComponent) {
-        const categories = ['Todas', ...new Set(this._articles.map(article => article.category))];
-        filtersComponent.categories = categories;
-        filtersComponent.activeCategory = this._currentCategory;
-      }
-      
-      const listComponent = this.shadowRoot.querySelector('campus-news-list');
-      if (listComponent) {
-        listComponent.articles = filteredArticles;
-        listComponent.selectedId = this._currentArticleId;
-      }
-    }
-    
-    dispatchDebugUpdate() {
-      const filteredList = this._currentCategory === 'Todas' 
-        ? this._articles 
-        : this._articles.filter(article => article.category === this._currentCategory);
-      
-      this.dispatchEvent(new CustomEvent('campus:debug-update', {
-        detail: {
-          category: this._currentCategory,
-          selectedId: this._currentArticleId,
-          total: this._articles.length,
-          filtered: filteredList.length
-        },
-        bubbles: true,
-        composed: true
-      }));
-    }
+    // Vincular métodos al contexto actual
+    this.handleCategoryChange = this.handleCategoryChange.bind(this);
+    this.handleArticleSelect = this.handleArticleSelect.bind(this);
+    this.updateDebugInfo = this.updateDebugInfo.bind(this);
+    this.handleDataLoaded = this.handleDataLoaded.bind(this);
   }
   
-  customElements.define('campus-news-app', CampusNewsApp);
+  connectedCallback() {
+    // Escuchar eventos personalizados
+    document.addEventListener('campus:category-change', this.handleCategoryChange);
+    document.addEventListener('campus:article-select', this.handleArticleSelect);
+    document.addEventListener('campus:data-loaded', this.handleDataLoaded);
+  }
+  
+  disconnectedCallback() {
+    // Limpiar listeners al desmontar el componente
+    document.removeEventListener('campus:category-change', this.handleCategoryChange);
+    document.removeEventListener('campus:article-select', this.handleArticleSelect);
+    document.removeEventListener('campus:data-loaded', this.handleDataLoaded);
+  }
+  
+  handleDataLoaded(event) {
+    this.state.articles = event.detail.articles;
+    this.filterArticles();
+    
+    // Emitir evento para actualizar la UI
+    this.dispatchEvent(new CustomEvent('campus:app-ready', {
+      bubbles: true,
+      composed: true
+    }));
+    
+    this.updateDebugInfo();
+  }
+  
+  handleCategoryChange(event) {
+    this.state.currentCategory = event.detail.category;
+    this.filterArticles();
+    this.updateDebugInfo();
+  }
+  
+  handleArticleSelect(event) {
+    this.state.currentArticleId = event.detail.id;
+    
+    // Emitir evento para actualizar el detalle del artículo
+    this.dispatchEvent(new CustomEvent('campus:article-updated', {
+      detail: {
+        article: this.state.articles.find(article => article.id === this.state.currentArticleId)
+      },
+      bubbles: true,
+      composed: true
+    }));
+    
+    this.updateDebugInfo();
+  }
+  
+  filterArticles() {
+    if (this.state.currentCategory === 'Todas') {
+      this.state.filteredArticles = [...this.state.articles];
+    } else {
+      this.state.filteredArticles = this.state.articles.filter(
+        article => article.category === this.state.currentCategory
+      );
+    }
+    
+    // Emitir evento para actualizar la lista de artículos
+    this.dispatchEvent(new CustomEvent('campus:articles-filtered', {
+      detail: {
+        articles: this.state.filteredArticles,
+        category: this.state.currentCategory
+      },
+      bubbles: true,
+      composed: true
+    }));
+  }
+  
+  updateDebugInfo() {
+    // Emitir evento para actualizar el panel de depuración
+    this.dispatchEvent(new CustomEvent('campus:debug-update', {
+      detail: {
+        category: this.state.currentCategory,
+        selectedId: this.state.currentArticleId,
+        total: this.state.articles.length,
+        filtered: this.state.filteredArticles.length
+      },
+      bubbles: true,
+      composed: true
+    }));
+  }
+}
+
+customElements.define('campus-news-app', CampusNewsApp);
